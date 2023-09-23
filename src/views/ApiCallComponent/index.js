@@ -27,11 +27,20 @@ const ApiCallComponent = () => {
   return (
     <>
     <Typography variant="h2">
-      Page for Registering a Book
+      USER PROFILE PAGE
     </Typography>
     <Paper elevation={4}>
-      <Typography variant="body2">
-        This is a section which shows the logged in user profile details.
+      <Typography variant="h4">
+        This page gets the user profile information and displays it on the screen. It is not working right now because we don't have an api. To view the working of the whole structure, open the code and visit the following pages.<br /><br /><br />
+
+        src/App.js -- Here we set up the interceptors<br /><br />
+        src/views/Login/index.js -- Here we call the auth api, which returns us the refreshToken which we store in localStorage<br /><br />
+        src/views/ApiCallComponent/index.js -- Here we call different apis, one with authorization and one without authorization.<br /><br />
+        src/utils/api.js -- Here we have defined the axios api constructor, and we have defined all the methods for post/get/put with and without authorziation<br /><br />
+        src/utils/axios-interceptors.js -- Here we have the logic of calling the refreshToken, on every request, to send a fresh accessToken with the request here.<br /><br />
+
+
+        Thanks..
       </Typography>
     </Paper>
     </>

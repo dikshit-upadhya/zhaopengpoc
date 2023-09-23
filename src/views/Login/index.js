@@ -14,10 +14,12 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import api from "../../utils/axiosSetup/api";
 import { AUTH_API } from "../../utils/axiosSetup/requestRoutes";
+import { useNavigate } from "react-router-dom";
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
+  const navigate = useNavigate()
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -38,6 +40,8 @@ export default function SignIn() {
       .catch((err) => {
         // DO SOMETHING WITH THE ERROR OBJECT
       });
+
+    navigate('/api-call-component')
   };
 
   return (
